@@ -11,6 +11,7 @@
             height: 50px;
             border-radius: 100px;
             /* border: 1px solid white; */
+            border: 1px solid black;
         }
         h2{
             color: white;
@@ -31,7 +32,7 @@
         var a = 0;
 
         function time(){
-            t = Math.floor(Math.random() * 1500 + 100);
+            t = Math.floor(Math.random() * 2000 + 100);
             return t;
         }
 
@@ -51,6 +52,9 @@
 
         function kolor(){
             let kolor = Math.floor(Math.random()*16777215).toString(16);
+            while(kolor.length < 6){
+                kolor += "0"
+            }
             return kolor;
         }
 
@@ -82,12 +86,10 @@
                 a++;
                 if(a == 15){
                     document.getElementById("body").style.backgroundColor="black";
-                    document.getElementById("body").innerHTML="<h2>Gra zakończona</h2>"
+                    document.getElementById("body").innerHTML="<h2>Gra zakończona</h2>";
                 }
             })
-            
         }
-
     </script>
 </body>
 </html>
